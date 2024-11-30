@@ -13,6 +13,7 @@ import {
   SuccessfulPayment,
 } from "./pages";
 import ProductsReview from "./pages/ProductsReview";
+import OrderPage from "./pages/OrderPage";
 
 function App() {
   return (
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route exact path="/products_review">
             <ProductsReview />
+          </Route>
+          <Route exact path="/order">
+            <OrderPage />
           </Route>
           <Route exact path="/products/:slug" children={<SingleProduct />} />
           <Route exact path="/checkout">

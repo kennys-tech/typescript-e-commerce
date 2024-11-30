@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import { useCartContext } from '../context/cart_context'
+import React from "react";
+import styled from "styled-components";
+import { useCartContext } from "../context/cart_context";
 // import { useUserContext } from '../context/user_context'
-import { formatPrice } from '../utils/helpers'
-import { Link } from 'react-router-dom'
+import { formatPrice } from "../utils/helpers";
+import { Link } from "react-router-dom";
 
 const CartTotals = () => {
-  const { totalAmount } = useCartContext()
+  const { totalAmount } = useCartContext();
 
   return (
     <Wrapper>
@@ -24,19 +24,34 @@ const CartTotals = () => {
             order total: <span>{formatPrice(totalAmount)}</span>
           </h4>
         </article>
-        <CheckoutButton />
+        {/* <CheckoutButton />
+         */}
+        <Button type="submit">Proceed to Payment</Button>
       </div>
     </Wrapper>
-  )
-}
+  );
+};
 
 const CheckoutButton = () => {
   return (
-    <Link to='/checkout' className='btn'>
+    <Link to="/checkout" className="btn">
       proceed to checkout
     </Link>
-  )
-}
+  );
+};
+const Button = styled.button`
+  background-color: #ab7a5f;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: #1e40af;
+  }
+`;
 
 const Wrapper = styled.section`
   margin-top: 3rem;
@@ -86,6 +101,6 @@ const Wrapper = styled.section`
     text-align: center;
     font-weight: 700;
   }
-`
+`;
 
-export default CartTotals
+export default CartTotals;

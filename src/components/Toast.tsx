@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 type ToastProps = {
-  type: "success" | "error" | "warning";
+  type: "success" | "error" | "warning"; // Define the toast types
   message: string;
   onClose: () => void;
 };
