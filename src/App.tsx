@@ -1,6 +1,6 @@
-import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Navbar, Sidebar, Footer, ScrollToTop } from './components'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Updated for React Router v6 :contentReference[oaicite:0]{index=0}
+import { Navbar, Sidebar, Footer, ScrollToTop } from './components';
 
 import {
   Home,
@@ -11,51 +11,49 @@ import {
   Products,
   Cart,
   SuccessfulPayment,
-} from './pages'
+} from './pages';
 
 function App() {
   return (
     <Router>
+      {/* The Layout component wraps common UI elements */}
       <Layout>
-        <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route exact path='/shipping'>
-            <Shipping />
-          </Route>
-          <Route exact path='/cart'>
-            <Cart />
-          </Route>
-          <Route exact path='/products'>
-            <Products />
-          </Route>
-          <Route exact path='/products/:slug' children={<SingleProduct />} />
-          <Route exact path='/checkout'>
-            <Checkout />
-          </Route>
-          <Route exact path='/successful_payment'>
-            <SuccessfulPayment />
-          </Route>
-          <Route path='*'>
-            <Error />
-          </Route>
-        </Switch>
+        {/* Routes replaces Switch in react-router-dom v6 */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/shipping" element={<Shipping />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/:slug" element={<SingleProduct />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/successful_payment" element={<SuccessfulPayment />} />
+          {/* The wildcard route renders the Error page for all unmatched routes */}
+          <Route path="*" element={<Error />} />
+        </Routes>
       </Layout>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;
 
-const Layout: React.FC = ({ children }) => {
+// Explicitly define the props type to include children
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+// Personalized Layout component with semantic elements and a welcome comment
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <ScrollToTop />
       <Navbar />
       <Sidebar />
-      {children}
+      <main>
+        {/* You can further customize your main content area with styles or even a welcome banner */}
+        {children}
+      </main>
       <Footer />
     </>
-  )
-}
+  );
+};
