@@ -3,43 +3,40 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@sanity/client": "6.27.2",
-    "@stripe/react-stripe-js": "3.1.1",
-    "@stripe/stripe-js": "5.6.0",
-    "@testing-library/jest-dom": "6.6.3",
-    "@testing-library/react": "16.2.0",
-    "@testing-library/user-event": "14.6.1",
-    "@types/jest": "29.5.14",
-    "@types/node": "^12.20.37",
-    "@types/react": "18.2.45",
-    "@types/react-dom": "18.2.18",
-    "@types/react-router": "^5.1.17",
-    "@types/react-stripe-elements": "^6.0.6",
-    "@types/stripe-v3": "^3.1.26",
+    "@sanity/client": "^6.27.2",
+    "@stripe/react-stripe-js": "^3.1.1",
+    "@stripe/stripe-js": "^5.6.0",
     "axios": "^0.24.0",
     "dotenv": "^8.2.0",
-    "netlify": "^6.0.12",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.3.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "5.0.1",
-    "stripe": "17.6.0",
-    "styled-components": "6.1.14",
-    "typescript": "5.3.3",
-    "web-vitals": "4.2.4"
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "^5.0.1",
+    "stripe": "^17.6.0",
+    "styled-components": "^6.1.14",
+    "web-vitals": "^4.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "CI= react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev": "react-scripts start",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "@types/react-router-dom": "^5.3.2",
+    "@types/styled-components": "^5.1.15",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^20.11.24",
+    "netlify-cli": "^8.0.6",
+    "typescript": "^5.3.3"
   },
   "browserslist": {
     "production": [
@@ -52,11 +49,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/react-router-dom": "^5.3.2",
-    "@types/styled-components": "^5.1.15",
-    "netlify-cli": "^8.0.6"
   },
   "engines": {
     "node": ">=18.0.0",
